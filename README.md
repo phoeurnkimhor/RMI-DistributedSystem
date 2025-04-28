@@ -1,30 +1,34 @@
-# RMI Distributed System
+# Java RMI Example
 
-## Overview
-This project demonstrates a basic **Distributed System** using **Java RMI (Remote Method Invocation)**. The system allows different machines (clients and servers) to communicate with each other by invoking methods on remote objects over a network.
+This project demonstrates a simple Java RMI (Remote Method Invocation) application with a server and a client. The server offers a remote service, and the client invokes the remote method to retrieve a message from the server.
 
-## Features
-- **Remote Object Communication**: Clients can invoke methods on remote objects hosted by the server.
-- **Distributed Processing**: The client-server model, with distributed processing powered by RMI.
-- **Object Serialization**: Remote objects are serialized and sent over the network.
-- **Simple Example**: Demonstrates a basic "HelloWorld" example and a calculation service.
+## Project Structure
 
-## Technologies
-- **Java 8 or later**
-- **RMI (Remote Method Invocation)**
-- **Socket Communication**
-- **Java Security Manager (for sandboxing)**
-
-## Setup and Installation
 
 ### Prerequisites
-Ensure you have the following installed on your machine:
-- **Java Development Kit (JDK)** version 8 or later
-- A **terminal/command prompt**
-- **RMI Registry** (typically bundled with JDK)
 
-### Installation Steps
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/your-repository/rmi-distributed-system.git
-   cd rmi-distributed-system
+- Java Development Kit (JDK) 8 or higher installed.
+- `rmiregistry` tool (comes with the JDK).
+
+### Setting Up the RMI Server and Client
+
+Follow these steps to set up and run the RMI server and client.
+
+#### 1. **Compile the Code**
+
+You need to compile both the server-side and client-side Java files. Open your terminal and navigate to the root directory of the project (where `server/` and `client/` directories are located). Then, run the following command to compile both the server and client files:
+
+```bash
+javac server/*.java client/*.java
+
+
+java RMIServer
+
+
+Server is ready...
+
+
+java RMIClient
+
+
+Server Response: Hello from the server!
