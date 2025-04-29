@@ -3,6 +3,7 @@ package server;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import shared.FileServiceImplement;
 
 public class RMIServer {
     public static void main(String[] args) {

@@ -1,4 +1,5 @@
-package server;
+package shared;
+
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 import java.io.*;
@@ -7,7 +8,7 @@ import java.util.*;
 public class FileServiceImplement extends UnicastRemoteObject implements FileServerInterface {
     private static final String STORAGE_DIR = "server_storage";
 
-    protected FileServiceImplement() throws RemoteException {
+    public FileServiceImplement() throws RemoteException {
         super();
         File dir = new File(STORAGE_DIR);
         if (!dir.exists()) {

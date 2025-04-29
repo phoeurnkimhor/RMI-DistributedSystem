@@ -20,6 +20,7 @@ You need to compile both the server-side and client-side Java files. Open your t
 
 ```bash
 javac server/*.java client/*.java
+javac -d . server/*.java client/*.java shared/*.java
 
 
 java RMIServer

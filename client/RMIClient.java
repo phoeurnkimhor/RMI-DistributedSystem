@@ -1,11 +1,11 @@
 package client;
 
-import server.FileServerInterface;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.nio.file.*;
 import java.util.List;
 import java.util.Scanner;
+import shared.FileServerInterface;
 
 public class RMIClient {
     public static void main(String[] args) {
