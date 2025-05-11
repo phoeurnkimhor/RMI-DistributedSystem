@@ -33,3 +33,52 @@ java RMIClient
 
 
 Server Response: Hello from the server!
+
+
+
++-----------------+                        +------------------------+
+|   Client App    |                        |   Remote Object Impl   |
++--------+--------+                        +-----------+------------+
+         |                                             ^
+         | 1. Call method on stub                      |
+         v                                             |
++--------+--------+                                    |
+|      Stub       |                                    |
+| (Client Proxy)  |                                    |
++--------+--------+                                    |
+         |                                             |
+         | 2. Marshal method name & arguments          |
+         | 3. Send over network (TCP/IP)               |
+         v                                             |
++------------------------+                    +--------+---------+
+|   Transport Layer       | --------------->  |  Transport Layer |
++------------------------+                    +------------------+
+         |                                             ^
+         v                                             |
++------------------------+                    +--------+--------+
+|   Skeleton / Dispatcher | <---------------  | Unmarshal data  |
++------------------------+                    +--------+--------+
+         |                                             ^
+         | 4. Invoke actual method                     |
+         v                                             |
++------------------------+                    +--------------------------+
+|  Remote Object Impl     |                   | Return value or exception|
++------------------------+                    +--------------------------+
+         |                                             ^
+         | 5. Marshal result or exception              |
+         | 6. Send back over network (TCP/IP)          |
+         v                                             |
++------------------------+                    +------------------+
+|   Transport Layer       | <---------------  |  Transport Layer |
++------------------------+                    +------------------+
+         | 
+         v
++--------+--------+
+|      Stub       |
++--------+--------+
+         |
+         | 7. Unmarshal result
+         v
++--------+--------+
+|   Client App    |
++-----------------+
